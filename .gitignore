@@ -1,0 +1,6 @@
+.BurstioProducer.wavedev
+.ex.BurstioProducer.wavedev
+.project
+.cproject
+.pydevproject
+.settings/gov.redhawk.ide.sdr.ui.prefs
