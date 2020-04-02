@@ -13,6 +13,8 @@ class BurstioProducer_i : public BurstioProducer_base
         void constructor();
 
         int serviceFunction();
+
+    protected:
 };
 
 #endif // BURSTIOPRODUCER_I_IMPL_H

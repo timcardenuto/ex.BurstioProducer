@@ -2,10 +2,10 @@
 #include "ossie/ossieSupport.h"
 
 #include "BurstioProducer.h"
-int main(int argc, char* argv[])
-{
-    BurstioProducer_i* BurstioProducer_servant;
-    Component::start_component(BurstioProducer_servant, argc, argv);
-    return 0;
+extern "C" {
+    Resource_impl* make_component(const std::string& uuid, const std::string& identifier)
+    {
+        return new BurstioProducer_i(uuid.c_str(), identifier.c_str());
+    }
 }
 

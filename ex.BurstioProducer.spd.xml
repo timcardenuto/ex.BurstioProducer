@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE softpkg PUBLIC "-//JTRS//DTD SCA V2.2.2 SPD//EN" "softpkg.dtd">
-<softpkg id="DCE:7f83612c-bd57-470c-979c-c0ff6481a9cb" name="ex.BurstioProducer" type="2.0.5">
+<softpkg id="DCE:40dadceb-b256-450b-9e40-98bf0a905fd6" name="ex.BurstioProducer" type="2.2.5">
   <title></title>
   <author>
     <name>null</name>
   </author>
   <propertyfile type="PRF">
-    <localfile name="BurstioProducer.prf.xml"/>
+    <localfile name="ex.BurstioProducer.prf.xml"/>
   </propertyfile>
   <descriptor>
-    <localfile name="BurstioProducer.scd.xml"/>
+    <localfile name="ex.BurstioProducer.scd.xml"/>
   </descriptor>
   <implementation id="cpp">
     <description>The implementation contains descriptive information about the template for a software resource.</description>
-    <code type="Executable">
-      <localfile name="cpp/BurstioProducer"/>
-      <entrypoint>cpp/BurstioProducer</entrypoint>
+    <code type="SharedLibrary">
+      <localfile name="cpp/BurstioProducer.so"/>
+      <entrypoint>cpp/BurstioProducer.so</entrypoint>
     </code>
     <compiler name="/usr/bin/gcc" version="4.4.7"/>
     <programminglanguage name="C++"/>

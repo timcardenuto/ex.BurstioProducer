@@ -14,15 +14,18 @@ BurstioProducer_base::BurstioProducer_base(const char *uuid, const char *label) 
     Component(uuid, label),
     ThreadedComponent()
 {
+    setThreadName(label);
+
     loadProperties();
 
     burstFloat_out = new burstio::BurstFloatOut("burstFloat_out");
+    burstFloat_out->setLogger(this->_baseLog->getChildLogger("burstFloat_out", "ports"));
     addPort("burstFloat_out", burstFloat_out);
 }
 
 BurstioProducer_base::~BurstioProducer_base()
 {
-    delete burstFloat_out;
+    burstFloat_out->_remove_ref();
     burstFloat_out = 0;
 }
 
@@ -59,5 +62,6 @@ void BurstioProducer_base::releaseObject() throw (CORBA::SystemException, CF::Li
 void BurstioProducer_base::loadProperties()
 {
 }
+
 
 
